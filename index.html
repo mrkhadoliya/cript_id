@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRYPT ID</title>
+  <link rel="icon" href="assets/img/tab-img.png" type="image/gif" >
+  <link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+<!------ Include the above in your HEAD tag ---------->
+  <style>
+       .navbar-light .navbar-toggler-icon {
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        body.offcanvas-active {
+            overflow: hidden;
+        }
+
+        .offcanvas-header {
+            display: none;
+        }
+
+        .screen-overlay {
+            width: 0%;
+            height: 100%;
+            z-index: 30;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgba(34, 34, 34, 0.6);
+            transition: opacity 0.2s linear, visibility 0.1s, width 1s ease-in;
+        }
+
+        .screen-overlay.show {
+            transition: opacity 0.5s ease, width 0s;
+            opacity: 1;
+            width: 100%;
+            visibility: visible;
+        }
+
+        @media all and (max-width: 992px) {
+            .offcanvas-header {
+                display: block;
+            }
+            .mobile-offcanvas {
+                visibility: hidden;
+                transform: translateX(-100%);
+                border-radius: 0;
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                z-index: 1200;
+                width: 80%;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+                background-color: #102da3 !important;
+            }
+            html:lang(ar) .mobile-offcanvas {
+                transform: translateX(100%);
+            }
+            .mobile-offcanvas.show {
+                visibility: visible;
+                transform: translateX(0);
+            }
+            .nav-cont {
+                display: block !important;
+                padding-right: auto !important;
+                padding-left: auto !important;
+            }
+            .navbar2 {
+                box-shadow: 0px 3px 17px #00000047;
+            }
+            #navbar_main {
+                box-shadow: 0px 3px 17px #00000047;
+            }
+            .dropdown-menu {
+                border: none;
+            }
+            .nav-item {
+                border-bottom: 1px solid #eaeaea;
+            }
+        }
+
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        header {
+            width: 100%;
+            z-index: 10;
+        }
+
+        header .div1 {
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9;
+            box-shadow: 0px 2px 10px #ccc!important;
+        }
+
+        .visible-title {
+            visibility: visible;
+        }
+  </style>
+</head>
+<body>
+
+
+
+
+
+<header class="header">
+  <div class="div1">
+    <div class="container-fluid">
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#" >CRYPT<span >ID</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto">
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ARTWORKS </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CREATORS</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="#"><button type="button" class="btn btn-primary wallet-btn" >Connect to wallet</button></a>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="home_page">
+  <div class="home-banner py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="main_heading">
+            <h1 class="wow wow bounceInLeft">Discover Rare</h1>
+            <h1 class="text-right wow wow bounceInRight" ><span>Digital </span> Creators</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div  class="banner-img py-5 wow  pulse animated"  data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="5s" style="visibility: visible; animation-duration: 5s; animation-delay: 300ms; animation-iteration-count: infinite; animation-name: pulse;">
+            <img src="assets/img/main_img.png" class="w-100">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div  class="banner-content wow bounceInRight">
+            <div class="creator_interwind">
+              <div class="row">
+                <div class="col-auto"><img src="assets/img/creator_img.png" class="" height="77"></div>
+                <div class="col pl-0"><div class="atCreator mt-4"><a href="#" > @creator#1</a></div></div>
+              </div>
+              <div class="interwind-line">
+                <h1>Interwind</h1>
+              </div>
+              <div class="view_artwork mt-4">
+                <a href="#">View Artwork <img src="assets/img/arrow_right.png" class="" height="8"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-img2 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="iscover">
+            <div class="iscover-img">
+              <img src="assets/img/img1.png" class="w-100">
+            </div>
+            <div class="below_iscover">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-auto"><img src="assets/img/creator_img.png" class="" height="60"></div>
+                    <div class="col pl-0"><div class="atCreator mt-3"><a href="#" > @creator#1</a></div></div>
+                  </div>
+                  <h1>Interwind</h1>
+                </div>
+                <div class="col-md-6">
+                  <div class="view_art"><a href="#">View Artwork</a></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="iscover">
+            <div class="iscover-img">
+              <img src="assets/img/img2.png" class="w-100">
+            </div>
+            <div class="below_iscover">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-auto"><img src="assets/img/creator_img.png" class="" height="60"></div>
+                    <div class="col pl-0"><div class="atCreator mt-3"><a href="#" > @creator#2</a></div></div>
+                  </div>
+                  <h1>Consolation</h1>
+                </div>
+                <div class="col-md-6">
+                  <div class="view_art"><a href="#">View Artwork</a></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+</div>
+  <div class="live_auctions-section pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="common-heading">
+            <div class="row">
+              <div class="col"> <div class="heading-section"><h5>Live Auctions</h5></div> </div>
+              <div class="col-auto"> <div class="view-all-live"><a href="#">View All Live Auctions <img src="assets/img/arrow_right.png" class="" height="8"></a></div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft1.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">00h 00m</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInUp">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft2.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4" >
+          <div class="nft wow bounceInDown">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft3.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft4.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft5.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInDown">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft6.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInUp">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft7.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft8.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="featured-artworks-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="common-heading">
+            <div class="row">
+              <div class="col"> <div class="heading-section"><h5>Featured Artworks</h5></div> </div>
+              <div class="col-auto"> <div class="view-all-live"><a href="#">View All Artworks <img src="assets/img/arrow_right.png" class="" height="8"></a></div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft1.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">00h 00m</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft2.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft3.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft4.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft5.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInLeft">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft6.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft7.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft wow bounceInRight">
+            <div class="card w-100">
+              <img class="card-img-top" src="assets/img/nft8.png" alt="Card image cap">
+              <div class="card-body">
+                <a href="#" class="creator-go"><img src="assets/img/creator_img.png"> <span class="">@creator00#0</span></a>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid mt-2"><p class="m-0 text-color">Current Bid</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid mt-2"> <p class="m-0 text-color">English In</p></div></div>
+                  </div>
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid"><p class="m-0">0.00 ETH</p></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"><p class="m-0">Auction has ended</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="featured-Creators-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="common-heading">
+            <div class="row">
+              <div class="col"> <div class="heading-section"><h5>Featured Creators</h5></div> </div>
+              <div class="col-auto"> <div class="view-all-live"><a href="#">View All Creators <img src="assets/img/arrow_right.png" class="" height="8"></a></div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 mt-4">
+          <div class="nft01">
+            <div class="card w-100">
+              <img class="card-img-top1" src="assets/img/nft01.png" alt="Card image cap">
+              <div class="card-body">
+                <div class="upper-body-card">
+                  <div class="inner_img"><img src="assets/img/creator_img.png" ></div>
+                  <h4 class="mb-0 mt-2">FlucT</h4>
+                  <p class="gradient-text">@FlucT</p>
+                  <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid1 text-left"><p class="m-0 text-color">000</p><span class="text-muted">Followers</span></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"> <p class="m-0 text-color"><a href="#" class="follow-link">Follow</a></p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft01">
+            <div class="card w-100">
+              <img class="card-img-top1" src="assets/img/nft01.png" alt="Card image cap">
+              <div class="card-body">
+                <div class="upper-body-card">
+                  <div class="inner_img"><img src="assets/img/creator_img.png" ></div>
+                  <h4 class="mb-0 mt-2">FlucT</h4>
+                  <p class="gradient-text">@FlucT</p>
+                  <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid1 text-left"><p class="m-0 text-color">000</p><span class="text-muted">Followers</span></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"> <p class="m-0 text-color"><a href="#" class="follow-link">Follow</a></p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft01">
+            <div class="card w-100">
+              <img class="card-img-top1" src="assets/img/nft01.png" alt="Card image cap">
+              <div class="card-body">
+                <div class="upper-body-card">
+                  <div class="inner_img"><img src="assets/img/creator_img.png" ></div>
+                  <h4 class="mb-0 mt-2">FlucT</h4>
+                  <p class="gradient-text">@FlucT</p>
+                  <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid1 text-left"><p class="m-0 text-color">000</p><span class="text-muted">Followers</span></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"> <p class="m-0 text-color"><a href="#" class="follow-link">Follow</a></p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-4">
+          <div class="nft01">
+            <div class="card w-100">
+              <img class="card-img-top1" src="assets/img/nft01.png" alt="Card image cap">
+              <div class="card-body">
+                <div class="upper-body-card">
+                  <div class="inner_img"><img src="assets/img/creator_img.png" ></div>
+                  <h4 class="mb-0 mt-2">FlucT</h4>
+                  <p class="gradient-text">@FlucT</p>
+                  <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="bid_this">
+                  <div class="row m-0">
+                    <div class="col pl-0"><div class="current-bid1 text-left"><p class="m-0 text-color">000</p><span class="text-muted">Followers</span></div></div>
+                    <div class="col-auto pr-0"><div class="current-bid"> <p class="m-0 text-color"><a href="#" class="follow-link">Follow</a></p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="featured-Creators-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="common-heading">
+            <div class="row">
+              <div class="col"> <div class="heading-section"><h5>Blog</h5></div> </div>
+              <div class="col-auto"> <div class="view-all-live"><a href="#">View All <img src="assets/img/arrow_right.png" class="" height="8"></a></div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        
+        <div class="col-md-4 mt-4">
+          <div class="blog">
+            <div class="card w-100" style="">
+              <img class="card-img-top" src="assets/img/blog1.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">What Molly Soda has learned from watching Youtube all day</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="mb-0"><span class="text-muted">25 APRIL 2021</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mt-4">
+          <div class="blog">
+            <div class="card w-100" style="">
+              <img class="card-img-top" src="assets/img/blog2.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">What Molly Soda has learned from watching Youtube all day</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="mb-0"><span class="text-muted">25 APRIL 2021</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mt-4">
+          <div class="blog">
+            <div class="card w-100" style="">
+              <img class="card-img-top" src="assets/img/blog3.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">What Molly Soda has learned from watching Youtube all day</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="mb-0"><span class="text-muted">25 APRIL 2021</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="">
+  
+  <div class="copy-right text-white pt-3" style="background-color: #0B011D;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="copy-right-here">
+            <p>© Copyright CRYPTID 2021</p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="footer-social text-right">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" class="text-white">Instagram</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Twitter</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Discard</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Blog</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Community Guidelines</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#" class="text-white">Help</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
+    <script src="assets/slick/slick.min.js" type="text/javascript"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+     new WOW().init();
+    </script>
+<script>
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 300) {
+            $('header ').addClass('fixed-header');
+            $('header .div1').addClass('visible-title');
+        } else {
+            $('header').removeClass('fixed-header');
+            $('header .div1').removeClass('visible-title');
+        }
+    });
+</script> 
+<script type="text/javascript">
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+</script>
+</body>
+</html>
